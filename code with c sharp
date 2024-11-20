@@ -1,0 +1,51 @@
+using System;
+namespace Project
+{
+    class Task
+    {
+        
+         static void Main (string[] args)
+        {
+            int n, m;
+            Console.WriteLine("Enter the first number" );
+            n = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the second number");
+            m = Convert.ToInt32(Console.ReadLine());
+            primeBetweenTwoNumbers(n, m);
+            
+        }
+        static void primeBetweenTwoNumbers(int n, int m)
+        {
+
+
+            if (n < 2)
+            {
+                if (m < 2)
+                {
+                    Console.WriteLine("no prime number in this range");
+                    return;
+                }
+                else
+                {
+                    n = 2;
+                }
+            }
+            for (int i = n; i <= m; i++)
+            {
+                bool isPrime = true;
+                for (int j = 2; j <= i / 2; j++)
+                {
+                    if (i % j == 0)
+                    {
+                        isPrime = false;
+                        break;
+                    }
+                }
+                if (isPrime == true)
+                {
+                    Console.Write(i + "  ");
+                }
+            }
+        }
+    }
+}
